@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Поздравление</title>
+    <style>
+      body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-color: #e6cd97;
+        font-family: Arial, sans-serif;
+      }
+      .heart {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background-color: #ff6666;
+        transform: rotate(45deg);
+      }
+      .heart::before,
+      .heart::after {
+        content: "";
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        background-color: #ff6666;
+      }
+      .heart::before {
+        top: -100px;
+        left: 0;
+      }
+      .heart::after {
+        left: -100px;
+        top: 0;
+      }
+      .message {
+        position: absolute;
+        z-index: 1;
+        top: 30%;
+        left: 30%;
+        transform: translate(-50%, -50%) rotate(-45deg);
+        color: white;
+        font-size: 1em;
+        text-align: center;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+        background-color: rgba(255, 255, 255, 0.2);
+        padding: 5px 10px;
+        border-radius: 5px;
+        white-space: nowrap;
+      }
+
+      /* Адаптация для мобильных устройств */
+      @media (max-width: 600px) {
+        .heart {
+          width: 150px;
+          height: 150px;
+        }
+        .heart::before,
+        .heart::after {
+          width: 150px;
+          height: 150px;
+        }
+        .heart::before {
+          top: -75px;
+        }
+        .heart::after {
+          left: -75px;
+        }
+        .message {
+          font-size: 0.8em;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="heart">
+      <div class="message">
+        С 8 Марта! <br />Не грусти, ты прекрасна!<br />
+        И не замыкайся в себе
+      </div>
+    </div>
+  </body>
+</html>
